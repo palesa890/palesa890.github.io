@@ -17,6 +17,8 @@ html{
 body{
     font-family: 'Poppins', sans-serif;
     background-color: var(--background-color);
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
 a{
@@ -131,6 +133,7 @@ nav .right a span{
     gap: 10px;
     width: 200px;
     padding: 10px 20px;
+    margin: 10px;
     border: 1.5px solid grey ;
     border-radius: 5px;
 }
@@ -146,47 +149,111 @@ nav .right a span{
     font-size: 18px;
 }
 
-/* SECTION3 */
-
-.testimony-section{
+/* SECTION3: Projects */
+.projects-section {
     padding: 0 50px;
     margin-bottom: 100px;
 }
 
-.testimony-section h2{
+.projects-section h2 {
     font-size: 35px;
+    text-align: center;
     margin-bottom: 30px;
 }
 
-.testimony-section .group{
+.projects-grid {
     display: flex;
-    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+.project-card {
+    display: block;
+    width: 300px;
+    border: 1.5px solid grey;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    background-color: #fff;
+    color: var(--text-color);
+    text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.project-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.project-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.project-card h3 {
+    margin: 10px 0 5px 0;
+    font-size: 20px;
+}
+
+.project-card p {
+    padding: 0 15px 15px 15px;
+    font-size: 14px;
+    color: #333;
+}
+
+
+/* SECTION4 */
+.contact-section{
+    padding: 0 50px;
+    margin-bottom: 100px;
+}
+
+.contact-section h2{
+    font-size: 35px;
+}
+
+.contact-section .group{
+    display: flex;
     gap: 50px;
 }
 
-.testimony-section .group .person-details{
-    text-align: center;
-    flex: 2;
+.contact-section .group .text{
+    flex: 3;
+    margin-top: 20px;
 }
 
-.testimony-section .group .person-details img{
-    width: 200px;
-    aspect-ratio: 1 / 1;
-    object-fit: cover;
-    border-radius: 50%;
-    margin-bottom: 10px;
+.contact-section .group form{
+    flex: 3;
+    display: flex;
+    flex-direction: column;
 }
 
-.testimony-section .group .person-details p{
-    font-weight: 600;
+.contact-section .group form input,
+.contact-section .group form textarea{
+    font-family: 'Poppins', sans-sanerif;
+    border: 2px solid var(--link-color);
+    background-color: transparent;
+    padding: 10px;
+    margin-bottom: 15px;
+    outline: none;
+    resize: none;
 }
 
-.testimony-section .group .person-details p:last-child{
-    font-weight: normal;
+.contact-section .group form button{
+    font-size: 16px;
+    font-family: 'Poppins', sans-sanerif;
+    color: #fff;
+    background-color: var(--link-color);
+    border: none;
+    height: 50px;
+    cursor: pointer;
+    transition: .1s;
 }
 
-.testimony-section .group .text{
-    flex: 8;
+.contact-section .group form button:hover{
+    filter: brightness(.9);
 }
 
 @media (max-width: 850px){
@@ -206,15 +273,12 @@ nav .right a span{
         width: 300px;
     }
 
-    /* SECTION3 */
-    .testimony-section {
-        text-align: center;
-    }
-
-    .testimony-section .group{
+    /* SECTION4 */
+    .contact-section .group{
         flex-direction: column;
     }
 }
+
 
 @media (max-width: 600px){
     /* NAVBAR */
@@ -252,5 +316,10 @@ nav .right a span{
 
     .skills-section .cells .cell span{
         font-size: 16px;
+    }
+
+    /* SECTION4 */
+    .contact-section {
+        padding: 0 20px;
     }
 }
