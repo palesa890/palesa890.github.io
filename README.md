@@ -1,6 +1,6 @@
 # Palesa Matsane Portfolio
 
-Welcome to my personal portfolio site built with HTML and CSS
+Welcome to my personal portfolio site that I built with HTML and CSS
 
 🌐 **View it live here**: [Visit Portfolio]( https://palesa890.github.io/)
 
