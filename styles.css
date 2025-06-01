@@ -136,7 +136,14 @@ nav .right a span{
     margin: 10px;
     border: 1.5px solid grey ;
     border-radius: 5px;
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
+
+.skills-section .cells .cell a:hover {
+    color: black;
+}
+
 
 .skills-section .cells .cell img{
     width: 30px;

@@ -32,10 +32,10 @@
                 <i class="fa-brands fa-linkedin"></i>
                 <span>Linkedin</span>
             </a>
-            <a href="mailto:ppmatsane@gmail.com">
-                <i class="fa-solid fa-envelope"></i>
-                <span>Email</span>
-            </a>
+            <a href="#contact">
+                        <i class="fa-solid fa-envelope"></i>
+                        <span>Email</span>
+                    </a>
         </div>
      </nav>
 
@@ -76,49 +76,68 @@ impactful solutions, and excel in dynamic team environments.
                 I'm a passionate and curious developer with a strong foundation in software development, web technologies, and problem-solving. I enjoy building user-friendly applications and continuously improving my skills through hands-on projects and collaboration. My technical toolkit includes:
             </div>
             <div class="cells">
-                <div class="cell">
-                    
-                    <img src="images/html-icon.png" alt="html logo">
-                    <span>HTML</span>
-                </div>
-                <div class="cell">
-                    <img src="images/css-icon.png" alt="css logo">
-                    <span>CSS</span>
-                </div>
-                <div class="cell">
-                    <img src="images/js-icon.png" alt="javascript logo">
-                    <span>JavaScript</span>
-                </div>
-                <div class="cell">
-                    <img src="images/nodejs-icon.png" alt="node logo">
-                    <span>Node</span>
-                </div>
-                <div class="cell">
-                    <img src="images/react-icon.png" alt="react logo">
-                    <span>React.js</span>
-                </div>
-                <div class="cell">
-                    <img src="images/python-icon.png" alt="python logo">
-                    <span>Python</span>
-                </div>
-                <div class="cell">
-                    <img src="images/dart.png" alt="dart logo">
-                    <span>Dart</span>
-                </div>
-                <div class="cell">
-                    <img src="images/flutter.png" alt="flutter logo">
-                    <span>Flutter</span>
-                </div>
-                <div class="cell">
-                    <img src="images/java.png" alt="java logo">
-                    <span>Java</span>
-                </div>
-                <div class="cell">
-                    <img src="images/figma.png" alt="figma logo">
-                    <span>Figma</span>
-                </div>
-                
-            </div>
+    <div class="cell">
+        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank" title="HTML Documentation">
+            <img src="images/html-icon.png" alt="html logo">
+            <span>HTML</span>
+        </a>
+    </div>
+    <div class="cell">
+        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank" title="CSS Documentation">
+            <img src="images/css-icon.png" alt="css logo">
+            <span>CSS</span>
+        </a>
+    </div>
+    <div class="cell">
+        <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" title="JavaScript Documentation">
+            <img src="images/js-icon.png" alt="javascript logo">
+            <span>JavaScript</span>
+        </a>
+    </div>
+    <div class="cell">
+        <a href="https://nodejs.org/en/docs" target="_blank" title="Node.js Documentation">
+            <img src="images/nodejs-icon.png" alt="node logo">
+            <span>Node</span>
+        </a>
+    </div>
+    <div class="cell">
+        <a href="https://reactjs.org/docs/getting-started.html" target="_blank" title="React Documentation">
+            <img src="images/react-icon.png" alt="react logo">
+            <span>React.js</span>
+        </a>
+    </div>
+    <div class="cell">
+        <a href="https://www.python.org/doc/" target="_blank" title="Python Documentation">
+            <img src="images/python-icon.png" alt="python logo">
+            <span>Python</span>
+        </a>
+    </div>
+    <div class="cell">
+        <a href="https://dart.dev/guides" target="_blank" title="Dart Documentation">
+            <img src="images/dart.png" alt="dart logo">
+            <span>Dart</span>
+        </a>
+    </div>
+    <div class="cell">
+        <a href="https://docs.flutter.dev" target="_blank" title="Flutter Documentation">
+            <img src="images/flutter.png" alt="flutter logo">
+            <span>Flutter</span>
+        </a>
+    </div>
+    <div class="cell">
+        <a href="https://docs.oracle.com/en/java/" target="_blank" title="Java Documentation">
+            <img src="images/java.png" alt="java logo">
+            <span>Java</span>
+        </a>
+    </div>
+    <div class="cell">
+        <a href="https://help.figma.com/hc/en-us" target="_blank" title="Figma Documentation">
+            <img src="images/figma.png" alt="figma logo">
+            <span>Figma</span>
+        </a>
+    </div>
+</div>
+
          </section>
 
          <!-- SECTION3: Projects -->
@@ -142,21 +161,45 @@ impactful solutions, and excel in dynamic team environments.
                 <div class="text">
                     If you'd like to collaborate, have any questions, or just want to connect — feel free to reach out!
                 </div>
-                <form>
-                    <label for="name">Name</label>
-                    <input type="text" id="name">
+                <form id="contact-form">
+  <label for="name">Name</label>
+  <input type="text" id="name" name="name" required>
 
-                    <label for="email">Email</label>
-                    <input type="email" id="email">
+  <label for="email">Email</label>
+  <input type="email" id="email" name="email" required>
 
-                    <label for="message">Message</label>
-                    <textarea id="message" cols="30" rows="10"></textarea>
+  <label for="message">Message</label>
+  <textarea id="message" cols="30" rows="10" name="message" required></textarea>
 
-                    <button type="submit">Send Message</button>
-                </form>
+  <button type="submit">Send Message</button>
+  <p id="form-feedback" style="margin-top: 1rem; color: green;"></p>
+</form>
+
             </div>
          </section>
      </main>
+     <script>
+  const form = document.getElementById("contact-form");
+  const feedback = document.getElementById("form-feedback");
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const name = form.name.value.trim();
+    const email = form.email.value.trim();
+    const message = form.message.value.trim();
+
+    if (!name || !email || !message) {
+      feedback.style.color = "red";
+      feedback.textContent = "Please fill in all fields.";
+    } else {
+      feedback.style.color = "green";
+      feedback.textContent = "Thank you for your message!";
+      form.reset(); // optional
+    }
+  });
+</script>
+
 
 </body>
 </html>
