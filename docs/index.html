@@ -167,44 +167,48 @@ impactful solutions, and excel in dynamic team environments.
                 <div class="text">
                     If you'd like to collaborate, have any questions, or just want to connect — feel free to reach out!
                 </div>
-                <form id="contact-form">
-  <label for="name">Name</label>
-  <input type="text" id="name" name="name" required>
+                
+                <form id="contact-form"
+                action="https://formsubmit.co/ppmatsane@gmail.com"
+                method="POST"
+                target="hidden_iframe"
+                onsubmit="return showThankYou();">
+          
+            <!-- Disable CAPTCHA if needed -->
+            <input type="hidden" name="_captcha" value="false">
+          
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+          
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+          
+            <label for="message">Message</label>
+            <textarea id="message" name="message" required></textarea>
+          
+            <button type="submit">Send Message</button>
+          </form>
+          
+         
+          <p id="thank-you" style="display: none; color: green; margin-top: 1rem;">
+            Thank you for your message! I'll be in touch soon.
+          </p>
+          
 
-  <label for="email">Email</label>
-  <input type="email" id="email" name="email" required>
-
-  <label for="message">Message</label>
-  <textarea id="message" cols="30" rows="10" name="message" required></textarea>
-
-  <button type="submit">Send Message</button>
-  <p id="form-feedback" style="margin-top: 1rem; color: green;"></p>
-</form>
-
-            </div>
-         </section>
-     </main>
-     <script>
-  const form = document.getElementById("contact-form");
-  const feedback = document.getElementById("form-feedback");
-
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
-
-    const name = form.name.value.trim();
-    const email = form.email.value.trim();
-    const message = form.message.value.trim();
-
-    if (!name || !email || !message) {
-      feedback.style.color = "red";
-      feedback.textContent = "Please fill in all fields.";
-    } else {
-      feedback.style.color = "green";
-      feedback.textContent = "Thank you for your message!";
-      form.reset(); // optional
-    }
-  });
-</script>
+          <iframe name="hidden_iframe" style="display: none;"></iframe>
+          
+          <script>
+            function showThankYou() {
+              setTimeout(() => {
+                document.getElementById("thank-you").style.display = "block";
+                document.getElementById("contact-form").reset();
+              }, 100); // delay slightly so FormSubmit can grab the values
+          
+              return true;
+            }
+          </script>
+          
+  
 
 
 </body>
